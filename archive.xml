@@ -1,0 +1,31 @@
+<project name="desktop" default = "packege" basedir = ".">
+
+<target name = "info" depends= "ram">
+<tstamp>
+    <format property="TODAY_GB" pattern="d-MMMM-yyyy" locale="en,GB"/>
+  </tstamp>
+<echo>Hello World - Welcome to Apache Ant!</echo>
+  <javac srcdir="src" destdir="build/classes" includeantruntime="false" />
+</target>
+
+<target name = "packege" depends = "info">
+<echo>Hello World - Welcome to Apache Ant!</echo>
+<jar destfile = "${TODAY_GB}.jar" basedir = "src" />
+ <!--zip destfile="manual.zip" basedir="." /-->
+ <tar destfile="${TODAY_GB}.tar" basedir="build" />
+
+  </target>
+  
+<target name = "ram" >
+ 
+ <!-- to delete directoty -->
+ <delete dir="build" />
+ <delete dir = "manual.zip" />
+ <delete dir="build/classes"/>
+
+<!-- to crete directoty -->
+<mkdir dir = "build" />
+<mkdir dir = "build/classes" />
+
+</target>
+</project>

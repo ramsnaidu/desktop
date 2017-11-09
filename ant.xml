@@ -1,0 +1,20 @@
+<project name="desktop" default = "packege" basedir = ".">
+
+
+<target name = "info" >
+
+<antcall target = "ram" />
+
+<echo>Hello World - Welcome to Apache Ant!</echo>
+  <javac srcdir="src" destdir="build/classes" includeantruntime="false" />
+</target>
+
+<target name = "packege" >
+<antcall target = "info" />
+<jar destfile = "build/desktop.jar" basedir = "src" />
+</target>
+
+<target name = "ram" >
+ <ant antfile = "build.xml" target = "ram"/>
+</target>
+</project>
