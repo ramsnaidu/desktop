@@ -1,0 +1,30 @@
+<project name="desktop" default = "info" basedir = ".">
+
+<target name = "info" depends= "clean">
+<echo>Hello World - Welcome to Apache Ant!</echo>
+  <javac srcdir="src" destdir="build/classes" />
+</target>
+
+<target name = "clean" >
+ 
+ <delete dir="." includes="build"/>
+
+<!-- to crete directoty -->
+<mkdir dir = "build" />
+<mkdir dir = "build/classes" />
+
+<!-- to copy flie to flie -->
+<copy file ="src/login.java" tofile = "login.java" />
+
+<!-- to copy file to directory -->
+<copy file ="src/login.java" todir = "build" />
+
+<!-- to copy file to directory 
+ <copy todir = "build">
+    <fileset dir="src"/>
+	</fileset>
+ </copy>
+ 
+ -->
+</target>
+</project>

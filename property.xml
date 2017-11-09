@@ -1,0 +1,25 @@
+<project name="desktop" default = "packege" basedir = ".">
+
+<property name ="ram" location = "build/classes" />
+
+<target name = "info" depends= "clean">
+<echo>Hello World - Welcome to Apache Ant!</echo>
+  <javac srcdir="src" destdir= "${ram}" includeantruntime="false" />
+</target>
+
+<target name = "packege" depends = "info">
+<jar destfile = "build/desktop.jar" basedir = "src" />
+</target>
+
+<target name = "clean" >
+ 
+ <!-- to delete directoty -->
+ <delete dir="build" />
+ <delete dir= "${ram}" />
+
+<!-- to crete directoty -->
+<mkdir dir = "build" />
+<mkdir dir = "${ram}" />
+
+</target>
+</project>

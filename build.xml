@@ -1,0 +1,23 @@
+<project name="desktop" default = "packege" basedir = ".">
+
+<target name = "info" depends= "ram">
+<echo>Hello World - Welcome to Apache Ant!</echo>
+  <javac srcdir="src" destdir="build/classes" includeantruntime="false" />
+</target>
+
+<target name = "packege" depends = "info">
+<jar destfile = "build/desktop.jar" basedir = "src" />
+</target>
+
+<target name = "ram" >
+ 
+ <!-- to delete directoty -->
+ <delete dir="build" />
+ <delete dir="build/classes"/>
+
+<!-- to crete directoty -->
+<mkdir dir = "build" />
+<mkdir dir = "build/classes" />
+
+</target>
+</project>
